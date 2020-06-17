@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+$darkBlue: hsl(240, 38%, 20%);
+$grayishBlue: hsl(240, 18%, 77%);
+$linkColor:  hsl(228, 45%, 44%);
+$white: hsl(0,0,100%);
+
+body {
+    color:$darkBlue;
+    font-size:13px;
+    font-family: 'Inter', sans-serif;
+    font-weight:500;
+}
+
+.wrapper {
+    background:$white url("images/pattern-curve.svg") bottom left no-repeat;
+    background-size:45%;
+    padding:30px 40px;
+    width:750px;
+    box-shadow: 0 4px 4px 0 $grayishBlue, 0 6px 15px 0 $grayishBlue;
+    margin:auto;
+    position: relative;
+    .testimonials.hide {display: none;}
+    .testimonials {
+        display:grid;
+        grid-template-columns: auto auto;
+        .quote{
+            margin: auto;
+            background: url(images/pattern-quotes.svg) no-repeat;
+            background-size:15%;
+            padding: 30px 0 30px 30px;
+            background-position-x: 80px;
+            div {
+                position:absolute;
+                width:300px;
+            }
+            q {
+                font-size:16px;
+                margin:10px 0;
+            }
+            .name {
+                font-weight:700;
+            }
+            .job-title {
+                font-weight:300;
+            }
+        }
+        .profile-picture {
+            background: url("images/pattern-bg.svg") no-repeat;
+            background-size: contain;
+            padding:40px;
+            img {
+                box-shadow: 0 0px 0px 0 $darkBlue, 0 19px 31px -19px $darkBlue;
+                border-radius:4px 4px 4px 4px;
+                width:300px;
+                position:relative;
+                top:-11px;
+                right:8px;
+            }
+        }
+    }
+
+    .slider-navigation {
+        background: $white;
+        border:1px solid $white;
+        box-shadow: 0 0px 0px 0 $grayishBlue, 0 1px 7px 0 $grayishBlue;
+        border-radius: 20px;
+        padding: 7px 0 4px 0;
+        width: fit-content;
+        position: absolute;
+        bottom: 70px;
+        right: 296px;
+        button {
+            padding: 0 10px;
+            background:transparent;
+            border:0 none;
+            cursor:pointer;
+            img {
+                width:8px;
+            }
+        }
+        button:focus{
+            outline:none
+        }
+    }
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top:20px;
+    a {
+        color:$linkColor; 
+    }
+}
+
+@media only screen and (max-width:770px){
+    .wrapper{
+        width:340px;
+        padding:0;
+        .testimonials {
+            grid-template-columns: auto;
+            .quote{
+                grid-row:2;
+                text-align: center;
+                padding: 25px;
+                background-position-x: center;
+                .name{
+                    display:block;
+                }
+            }
+            .profile-picture{
+                grid-row: 1;
+                img{
+                    width:100%;
+                    right:auto;
+                }
+            }
+        }
+        .slider-navigation{
+            top: 277px;
+            right: 145px;
+            bottom:auto;
+        }
+    }
+}
