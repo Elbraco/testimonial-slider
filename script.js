@@ -1,4 +1,4 @@
-let testimonialIndex = 1;
+let testimonialIndex = 0;
 showTestmonials(testimonialIndex);
 
 function nextTestimonial(n) {
